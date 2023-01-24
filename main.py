@@ -17,11 +17,22 @@ def arm(n):
         n=n//10
     if(sum==copy_n):
         print(f"{copy_n} is an armstrong no.")
-        return "True"
-    
+        result={
+            "Number":n,
+            "Seriver IP": "125.521.145",
+            "Armstrong": True
+             }
+  
     else:
-       print(f"{copy_n} is not an armstrong no.")        
-       return "False"
+       print(f"{copy_n} is not an armstrong no.")  
+       result={
+            "Number":n,
+            "Seriver IP": "125.521.145",
+            "Armstrong": True
+             }   
+
+    return(jsonify(result))           
+       
 
 if __name__=="__main__":
   app.run(debug=True)
