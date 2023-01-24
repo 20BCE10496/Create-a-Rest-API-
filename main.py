@@ -18,7 +18,7 @@ def arm(n):
     if(sum==copy_n):
         print(f"{copy_n} is an armstrong no.")
         result={
-            "Number":n,
+            "Number":copy_n,
             "Seriver IP": "125.521.145",
             "Armstrong": True
              }
@@ -26,9 +26,9 @@ def arm(n):
     else:
        print(f"{copy_n} is not an armstrong no.")  
        result={
-            "Number":n,
+            "Number":copy_n,
             "Seriver IP": "125.521.145",
-            "Armstrong": True
+            "Armstrong": False
              }   
 
     return(jsonify(result))           
