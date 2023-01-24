@@ -5,6 +5,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
+@app.route('/armstrong/<int:n>')
 def arm(n):  
 
     sum=0
@@ -16,11 +17,11 @@ def arm(n):
         n=n//10
     if(sum==copy_n):
         print(f"{copy_n} is an armstrong no.")
-        return True
+        return "True"
     
     else:
        print(f"{copy_n} is not an armstrong no.")        
-       return False
+       return "False"
 
 if __name__=="__main__":
   app.run(debug=True)
