@@ -20,15 +20,18 @@ def arm(n):
         result={
             "Number":copy_n,
             "Seriver IP": "125.521.145",
-            "Armstrong": True
-             }
+            "Armstrong": True,
+            "Others Numbers":[1,5,22,52]
+            }
   
     else:
        print(f"{copy_n} is not an armstrong no.")  
        result={
             "Number":copy_n,
             "Seriver IP": "125.521.145",
-            "Armstrong": False
+            "Armstrong": False,
+            "Others Numbers":[1,5,22,52]
+
              }   
 
     return(jsonify(result))           
