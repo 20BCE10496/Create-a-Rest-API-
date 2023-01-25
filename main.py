@@ -22,6 +22,7 @@ def arm(n):
             "Seriver IP": "125.521.145",
             "Armstrong": True,
             "Others Numbers":[1,5,22,52]
+            
             }
   
     else:
