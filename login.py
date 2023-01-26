@@ -1,25 +1,26 @@
-from flask import Flask, request,render_template, redirect
-import os
-import sqlite3
+from flask import Flask,request,render_template
+import pickle
 
-# to set path  and location of file
-currentlocation = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 
-@app.route('/login')
-def homepage():
-    return render_template("index.html")
 
-@app.route('/login',methods=["POST"])
-def checklogin():
-    UN=request.form('Username')
-    PW=request.form('Password')
+@app.route('/')
+def hello_world():
+    return render_template("login.html")
+database={'Amisha':'123','Aman':'aac','Anil':'asdsf'}
 
-    sqlconnection=sqlite3.Connection(currentlocation + "\Login.db")
-    cursor=sqlconnection.cursor()
+@app.route('/form_login',methods=['POST','GET'])
+def login():
+    name1=request.form['username']
+    pwd=request.form['password']
+    if name1 not in database:
+	    return render_template('login.html',info='Invalid User')
+    
+    else:
+        if database[name1]!=pwd:
+            return render_template('login.html',info='Invalid Password')
+        else:
+	         return render_template('home.html',name=name1)
 
-
-if __name__=="__main__":
-  app.run(debug=True)
-
-   
+if __name__ == '__main__':
+    app.run()
