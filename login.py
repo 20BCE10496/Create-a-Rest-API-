@@ -6,15 +6,18 @@ import sqlite3
 currentlocation = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/login')
 def homepage():
     return render_template("index.html")
 
-@app.route('/',methods=["POST"])
+@app.route('/login',methods=["POST"])
 def checklogin():
     UN=request.form('Username')
     PW=request.form('Password')
-         
+
+    sqlconnection=sqlite3.Connection(currentlocation + "\Login.db")
+    cursor=sqlconnection.cursor()
+
 
 if __name__=="__main__":
   app.run(debug=True)
