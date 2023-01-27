@@ -21,7 +21,7 @@ def login():
         if database[name1] != pwd:
             return render_template('login.html', info='Invalid Password')
         else:
-            return render_template('home.html', name=name1)
+            return render_template('index.html', name=name1)
 
 if __name__ == '__main__':
     app.run(debug=True)
