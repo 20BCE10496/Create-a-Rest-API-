@@ -24,4 +24,4 @@ def login():
             return render_template('home.html', name=name1)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
